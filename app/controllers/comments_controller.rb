@@ -6,15 +6,21 @@ class CommentsController < ApplicationController
    end
    
    def create
-      if current_user
-         @comment = current_user.comments.build(comment_params)
-         if @comment.save
-            flash[:success] = "You posted a comment!"
+      respond_to do |format|
+         if current_user
+            @comment = current_user.comments.build(comment_params)
+            if @comment.save
+               flash[:success] = "You posted a comment!"
+            else 
+               flash[:error] = "You failed"
+            end
+            format.html {redirect_to root_url}
+            format.js
          else 
-            flash[:error] = "You failed"
+            format.html {redirect_to root_url}
+            format.js
          end
       end
-      redirect_to root_url 
    end
    
    private 
