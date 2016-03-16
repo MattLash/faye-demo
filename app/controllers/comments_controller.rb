@@ -23,6 +23,10 @@ class CommentsController < ApplicationController
       end
    end
    
+   def index
+      @comments = Comment.order('created_at DESC')
+   end
+   
    private 
       
       def comment_params
