@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
       # below we've re-written the comments variable to pull a query where id is 
       # greater than something, that something is the following argument. The following
       # argument is looking at params, then looking after "id" and converting this to an integer
-      @comments = Comment.where('id > ?', params[:after_id].to_i).order("created_at DESC")
+      @comments = Comment.where('id > ?', params[:after_id].to_i).order('created_at DESC')
    end
    
    private 
