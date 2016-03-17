@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require polling
+//= require faye
+//= require comments
 //= require turbolinks
 //= require jquery.turbolinks
 //= require_tree .

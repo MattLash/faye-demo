@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass'
 
 gem 'omniauth-facebook'
+gem 'faye-rails', '~> 2.0'
+gem 'thin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
